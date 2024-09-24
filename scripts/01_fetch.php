@@ -42,6 +42,7 @@ foreach ($nodes as $node) {
 
                 $dateParts = explode('-', $cols[0]);
                 if(count($dateParts) !== 3) {
+                    $pos = strpos($rawPage, '<td class="CCMS_jGridView_td_Class_0"', $posEnd);
                     continue;
                 }
                 $dateParts[0] += 1911;
