@@ -41,6 +41,9 @@ foreach ($nodes as $node) {
                 $nodeFile = $rawPath . '/node_' . $parts[1] . '.html';
 
                 $dateParts = explode('-', $cols[0]);
+                if(count($dateParts) !== 3) {
+                    continue;
+                }
                 $dateParts[0] += 1911;
                 $json = array(
                     'published' => implode('-', $dateParts),
