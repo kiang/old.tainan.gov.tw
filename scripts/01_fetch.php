@@ -56,7 +56,7 @@ foreach ($nodes as $node) {
                 }
                 $jsonFile = $dataPath . '/' . $json['published'] . '_' . $parts[1] . '.json';
 
-                if (!file_exists($nodeFile)) {
+                if (!file_exists($nodeFile) || filesize($nodeFile) === 0) {
                     error_log('fetching ' . $link);
                     file_put_contents($nodeFile, file_get_contents($json['url']));
                 }
